@@ -349,4 +349,8 @@ body {
     .day-night-buttons {
         left: 65vw;
     }
+    .bubble-1 {
+        max-width: 8px;
+        max-height: 10px;
+    }
 }
