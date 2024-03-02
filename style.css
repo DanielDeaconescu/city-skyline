@@ -9,6 +9,10 @@
     --window-color2: #8cd9b3;
     --window-color3: #d98cb3;
     --window-color4: #8cb3d9;
+    --background-moon: #e5e5e5;
+    --moon-color-light: #dcdcdc;
+    --moon-color-dark: #c9c9c9;
+    --whole-background: #232234;
 }
 
 
@@ -21,6 +25,7 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    background-color: var(--whole-background);
 }
 
 /* Styling the background buildings */
@@ -39,21 +44,25 @@ body {
 .b-building-1 {
     width: 10%;
     height: 70%;
+    z-index: 1;
 }
 
 .b-building-2 {
     width: 10%;
     height: 50%;
+    z-index: 1;
 }
 
 .b-building-3 {
     width: 10%;
     height: 55%;
+    z-index: 1;
 }
 
 .b-building-4 {
     width: 11%;
     height: 58%;
+    z-index: 1;
 }
 
 .b-building-section-1 {
@@ -154,6 +163,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2;
 }
 
 .f-building-1-top {
@@ -186,6 +196,7 @@ body {
 .f-building-2 {
     width: 10%;
     height: 40%;
+    z-index: 2;
 }
 
 .f-building-2-top {
@@ -211,6 +222,7 @@ body {
 .f-building-3 {
     width: 10%;
     height: 35%;
+    z-index: 2;
 }
 
 .f-building-3-section-1 {
@@ -253,6 +265,7 @@ body {
     height: 45%;
     position: relative;
     left: 10%;
+    z-index: 2;
 }
 
 .f-building-4-section-1 {
@@ -289,6 +302,7 @@ body {
     justify-content: center;
     padding-top: 5px;
     gap: 3px 10px;
+    z-index: 2;
 }
 
 .stripe-7 {
@@ -307,6 +321,7 @@ body {
     height: 38%;
     background-color: var(--dark-background);
     padding: 10px 4px;
+    z-index: 2;
 }
 
 .stripe-8 {
@@ -318,8 +333,22 @@ body {
 /* Creating the sun */
 
 .moon {
-    background: radial-gradient(closest-corner circle at 15% 15%, #ccc, #ccc 20%, #445 21%, #223 100%);
-    ;
+    /* background: radial-gradient(closest-corner circle at 15% 15%, #ccc, #ccc 20%, #445 21%, #223 100%);
+    ; */
+}
+
+.moon-make {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    left: 4%;
+    background-color: var(--background-moon);
+    box-shadow: 0 0 10px var(--background-moon),
+        0 0 60px var(--moon-color-dark),
+        0 0 200px var(--moon-color-light),
+        inset 0 0 80px var(--moon-color-light);
 }
 
 .sun {
@@ -334,6 +363,7 @@ body {
     top: 5vh;
     left: 80vw;
     gap: 5px;
+    z-index: 2;
 }
 
 .button {
@@ -343,6 +373,31 @@ body {
     background-color: #fcdb03;
     border: none;
     cursor: pointer;
+}
+
+
+/* Star stylization */
+.overlay {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    background-image: url("transparent-stars.png");
+}
+
+.none {
+    display: none;
+}
+
+.overlay2 {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    left: 25%;
+    background-image: url("transparent-birds.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Media queries */
@@ -377,4 +432,3 @@ body {
         max-height: 5px;
     }
 }
-

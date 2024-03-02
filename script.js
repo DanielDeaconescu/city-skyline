@@ -2,6 +2,11 @@
 let buttonDay = document.querySelector(".button-day");
 let buttonNight = document.querySelector(".button-night");
 let skyObject = document.querySelector(".background-buildings");
+let starsDiv = document.querySelector(".stars-div");
+let birdsDiv = document.querySelector(".birds-div");
+let overlay = document.querySelector(".overlay");
+let overlay2 = document.querySelector(".overlay2");
+let theMoon = document.querySelector(".moon-make");
 
 // Changing the background color of every part of every building
 // Selecting every part of every building
@@ -103,6 +108,19 @@ function functionDay() {
     bBuilding4Sec2.style.backgroundColor = "var(--building-color4)";
     bBuilding4Sec3.style.backgroundColor = "var(--building-color4)";
     stripe3.forEach((element) => element.style.backgroundColor = "var(--window-color4)");
+
+    // Making the overlay dissaper when clicking the Day button
+
+    overlay.classList.add("none");
+
+    // Making overlay2 visible when pressing the Day button
+
+    overlay2.classList.remove("none");
+
+    // Making the moon dissapear during the day
+
+    theMoon.classList.add("none");
+
 }
 
 function functionNight() {
@@ -141,4 +159,18 @@ function functionNight() {
     bBuilding4Sec2.style.backgroundColor = "var(--dark-background)";
     bBuilding4Sec3.style.backgroundColor = "var(--dark-background)";
     stripe3.forEach((element) => element.style.backgroundColor = "var(--grey-background)");
+
+    // Making the overlay reappear when clicking the Night button
+
+    overlay.classList.remove("none");
+
+    // Making the overlay2 dissapear when hitting the Night button
+
+    overlay2.classList.add("none");
+
+    // Making the moon reappear after it is removed with the Day button
+
+    theMoon.classList.remove("none");
+
+
 }
